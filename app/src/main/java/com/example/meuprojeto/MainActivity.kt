@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         val pesoConvertido : Double = peso.toDouble()
         val alturaConvertida : Double = altura.toDouble()
         val resultadoImc = pesoConvertido / (alturaConvertida * alturaConvertida)
-        textResultado.setText("Seu IMC é: $resultadoImc")
+        textResultado.setText("Seu IMC é: %.2f".format(resultadoImc))
 
 
     }
