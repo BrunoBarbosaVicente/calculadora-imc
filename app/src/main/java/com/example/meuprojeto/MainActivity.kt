@@ -30,9 +30,19 @@ class MainActivity : AppCompatActivity() {
         val pesoConvertido : Double = peso.toDouble()
         val alturaConvertida : Double = altura.toDouble()
         val resultadoImc = pesoConvertido / (alturaConvertida * alturaConvertida)
-        textResultado.setText("Seu IMC é: %.2f".format(resultadoImc))
-
-
+        if (resultadoImc < 18.5){
+            textResultado.setText("Seu IMC é: %.2f".format(resultadoImc) + " Abaixo do peso")
+        } else if (resultadoImc >= 18.5 && resultadoImc < 24.9){
+            textResultado.setText("Seu IMC é: %.2f".format(resultadoImc) + " Peso normal")
+        } else if (resultadoImc >= 25.0 && resultadoImc < 29.9){
+            textResultado.setText("Seu IMC é: %.2f".format(resultadoImc) + " Sobre peso")
+        } else if (resultadoImc >= 30.0 && resultadoImc < 34.9){
+            textResultado.setText("Seu IMC é: %.2f".format(resultadoImc) + " Obesidade grau 1")
+        } else if (resultadoImc >= 35.0 && resultadoImc < 39.9){
+            textResultado.setText("Seu IMC é: %.2f".format(resultadoImc) + " Obesidade grau 2")
+        } else {
+            textResultado.setText("Seu IMC é: %.2f".format(resultadoImc) + " Obesidade grau 3")
+        }
     }
 
 
